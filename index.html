@@ -19,6 +19,7 @@
     your-portfolio/
     ├── index.html (이 파일)
     └── images/
+        ├── profile.png
         ├── tubble-main.png
         ├── tubble-select-diagram.png
         ├── tubble-doxygen.png
@@ -155,6 +156,38 @@
             background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
         }
         
+        .about-grid {
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            gap: 60px;
+            align-items: stretch;
+        }
+        
+        .profile-image-container {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+        
+        .profile-image {
+            width: 100%;
+            height: auto;
+            border-radius: 16px;
+            border: 3px solid var(--primary-color);
+            box-shadow: 0 10px 40px rgba(99, 102, 241, 0.3);
+        }
+        
+        .profile-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+        }
+        
+        .profile-content h1 {
+            margin-bottom: 10px;
+        }
+        
         .intro-content {
             margin: 40px 0;
         }
@@ -163,7 +196,7 @@
             font-size: 1.8rem;
             color: var(--text-secondary);
             font-weight: 400;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
         }
         
         .intro-text {
@@ -171,8 +204,20 @@
             padding: 30px;
             border-radius: 16px;
             border-left: 4px solid var(--primary-color);
-            margin: 30px 0;
+            margin: 20px 0;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .intro-text p {
+            margin-bottom: 0;
+        }
+        
+        .contact-section {
+            margin-top: 30px;
+        }
+        
+        .contact-section h3 {
+            margin-bottom: 15px;
         }
         
         .contact-links {
@@ -381,6 +426,16 @@
                 padding: 60px 0;
             }
             
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .profile-image-container {
+                max-width: 300px;
+                margin: 0 auto;
+            }
+            
             .contact-links {
                 flex-direction: column;
             }
@@ -393,32 +448,37 @@
     <section id="about-me-section">
         <div class="container">
             <span class="section-label">SECTION: about-me-section</span>
-            <h1>이름</h1>
-            <p class="job-title">게임 클라이언트 개발자</p>
             
-            <div class="intro-content">
-                <div class="intro-text">
-                    <h3>소개</h3>
-                    <p>지원자 소개 및 핵심 역량 요약</p>
-                    <p>펄어비스에 지원하는 이유와 관심사</p>
-                    <p>대표 이미지 또는 비주얼</p>
+            <div class="about-grid">
+                <!-- Left: Profile Image -->
+                <div class="profile-image-container">
+                    <!-- 이미지 교체: images/profile.png -->
+                    <img src="./images/profile.png" alt="프로필 이미지" class="profile-image">
                 </div>
                 
-                <div>
-                    <h3>Contact & Links</h3>
-                    <div class="contact-links">
-                        <a href="mailto:your.email@example.com" class="contact-link">
-                            📧 Email
-                        </a>
-                        <a href="https://github.com/yourusername" class="contact-link" target="_blank">
-                            💻 GitHub
-                        </a>
-                        <a href="https://linkedin.com/in/yourusername" class="contact-link" target="_blank">
-                            💼 LinkedIn
-                        </a>
-                        <a href="https://yourportfolio.com" class="contact-link" target="_blank">
-                            🌐 Portfolio
-                        </a>
+                <!-- Right: Name and Introduction -->
+                <div class="profile-content">
+                    <h1>최성락</h1>
+                    <p class="job-title">게임 클라이언트 개발자</p>
+                    
+                    <div class="intro-text">
+                        <p>충돌을 두려워하지 않고 더 단단해지기 위해 노력하겠습니다.<br>
+                        담금질 될 준비가 된 게임 클라이언트 개발자 최성락입니다.</p>
+                    </div>
+                    
+                    <div class="contact-section">
+                        <h3>Contact & Links</h3>
+                        <div class="contact-links">
+                            <a href="mailto:jky72ta@gmail.com" class="contact-link">
+                                📧 jky72ta@gmail.com
+                            </a>
+                            <a href="https://github.com/flatroad" class="contact-link" target="_blank">
+                                💻 GitHub
+                            </a>
+                            <a href="https://sounchoi-portfolio.github.io/portfolio/" class="contact-link" target="_blank">
+                                🌐 Portfolio
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -483,7 +543,7 @@
                 </div>
                 
                 <!-- 이미지 파일: images/tubble-select-diagram.png -->
-                <img src="./images/tubble-select-diagram.png" alt="Select 기반 멀티플렉싱 다이어그램" style="width: 100%; border-radius: 8px; margin: 30px 0;">
+                <img src="./images/tubble-select-diagram.png" alt="Select 기반 멀티플렉싱 다이어그램" style="width: 67%; max-width: 800px; border-radius: 8px; margin: 30px auto; display: block;">
                 
                 <div style="margin-bottom: 30px;">
                     <h4>결과 및 성과 (Result)</h4>
