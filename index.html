@@ -23,7 +23,7 @@
         ├── tubble-main.png
         ├── tubble-select-diagram.png
         ├── tubble-doxygen.png
-        ├── project2-main.png
+        ├── ittakestwo-main.png
         └── project3-main.png
     
     📝 이미지 업로드 방법:
@@ -509,6 +509,15 @@
                     <span class="meta-tag">기술: Unreal Engine, C++</span>
                 </div>
                 <p><strong>팀 구성:</strong> 2명 (언리얼 개발자 2명)</p>
+                
+                <!-- Links moved here -->
+                <div style="margin-top: 30px;">
+                    <h4>프로젝트 링크</h4>
+                    <div class="project-links">
+                        <a href="https://github.com/ForNaggi" class="btn" target="_blank">GitHub Repository</a>
+                        <a href="https://www.youtube.com/watch?v=hI5eYPj5So4" class="btn btn-secondary" target="_blank">Demo Video</a>
+                    </div>
+                </div>
             </div>
             
             <!-- Contribution -->
@@ -654,16 +663,6 @@
                     </ul>
                 </div>
             </div>
-            
-            <!-- Links -->
-            <div id="project-1-links" class="project-card">
-                <span class="section-label">SUB: project-1-links</span>
-                <h3>프로젝트 링크</h3>
-                <div class="project-links">
-                    <a href="https://github.com/ForNaggi" class="btn" target="_blank">GitHub Repository</a>
-                    <a href="https://www.youtube.com/watch?v=hI5eYPj5So4" class="btn btn-secondary" target="_blank">Demo Video</a>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -671,19 +670,30 @@
     <section id="project-2-section">
         <div class="container">
             <span class="section-label">SECTION: project-2-section</span>
-            <h2>프로젝트 2</h2>
+            <h2>It Takes Two (모작)</h2>
             
             <!-- Project Overview -->
             <div id="project-2-overview" class="project-card">
                 <span class="section-label">SUB: project-2-overview</span>
                 <h3>프로젝트 개요</h3>
-                <!-- 이미지 교체: images/project2-main.png -->
-                <img src="./images/project2-main.png" alt="프로젝트 2 메인 이미지" style="width: 100%; border-radius: 12px; margin: 20px 0;">
-                <p>타이틀 및 대표 이미지</p>
+                <!-- 이미지 교체: images/ittakestwo-main.png -->
+                <img src="./images/ittakestwo-main.png" alt="It Takes Two 게임 스크린샷" style="width: 100%; border-radius: 12px; margin: 20px 0;">
+                <p>It Takes Two의 오두막 챕터 공구통 보스전 구간을 재현했습니다. 협동 플레이의 조작감과 화면 UX를 Unreal C++로 구현했습니다.</p>
                 <div class="project-meta">
-                    <span class="meta-tag">장르: Action</span>
-                    <span class="meta-tag">역할: 클라이언트 개발</span>
-                    <span class="meta-tag">기간: 2023.06 - 2023.12</span>
+                    <span class="meta-tag">장르: 협동 액션 어드벤처</span>
+                    <span class="meta-tag">역할: 캐릭터/카메라 시스템 개발</span>
+                    <span class="meta-tag">기간: 2024.07.22 - 2024.08.16</span>
+                    <span class="meta-tag">기술: Unreal Engine, C++</span>
+                </div>
+                <p><strong>팀 구성:</strong> 5명 (언리얼 개발자 3명, 기획자 1명, TA 1명)</p>
+                
+                <!-- Links moved here -->
+                <div style="margin-top: 30px;">
+                    <h4>프로젝트 링크</h4>
+                    <div class="project-links">
+                        <a href="https://github.com/ItTakesTwo" class="btn" target="_blank">GitHub Repository</a>
+                        <a href="https://www.youtube.com/watch?v=x788uw" class="btn btn-secondary" target="_blank">Demo Video</a>
+                    </div>
                 </div>
             </div>
             
@@ -691,7 +701,13 @@
             <div id="project-2-contribution" class="project-card">
                 <span class="section-label">SUB: project-2-contribution</span>
                 <h3>본인 기여 내용</h3>
-                <p>구현한 주요 기능</p>
+                <ul class="contribution-list">
+                    <li><strong>카메라/캐릭터 이동/애니메이션 구현:</strong> 캐릭터 이동 상태에 따라 카메라 규칙과 정면 기준을 분리해 조작감 향상</li>
+                    <li><strong>캐릭터 애니메이션 적용:</strong> Animation Retargeting을 활용한 애니메이션 시스템 구축</li>
+                    <li><strong>8방향 이동 제한:</strong> 아날로그 스틱 입력을 8방향으로 양자화해 원작의 이동 감각 재현</li>
+                    <li><strong>화면 동적 분할:</strong> 캐릭터 사망 등 게임 상황에 따라 스플릿 스크린이 동적으로 변화하도록 구현</li>
+                    <li><strong>상태 기반 행동 제어:</strong> 상태 컴포넌트로 캐릭터 행동을 제한하고 강제하는 시스템 설계</li>
+                </ul>
             </div>
             
             <!-- Technical Challenge -->
@@ -699,41 +715,161 @@
                 <span class="section-label">SUB: project-2-challenge</span>
                 <h3>기술적 도전과 해결</h3>
                 
-                <div style="margin-bottom: 30px;">
-                    <h4>Problem</h4>
-                    <p>문제 상황</p>
+                <div style="margin-bottom: 50px;">
+                    <h4>비트마스크 기반 상태 관리 시스템</h4>
+                    
+                    <div style="margin-bottom: 30px; margin-top: 20px;">
+                        <h4 style="color: var(--primary-color); font-size: 1.1rem;">Problem</h4>
+                        <p>원작을 분석한 결과, 걷기 중 점프와 제자리 점프에서 앞으로 가는 힘의 크기가 다르고, 같은 방향키를 눌러도 현재 상태에 따라 캐릭터의 반응이 달라지는 것을 확인했습니다. 초기에는 조건문으로 이를 구현하려 했으나, 상태 조합이 늘어날수록 코드 복잡도가 급격히 증가했습니다.</p>
+                    </div>
+                    
+                    <div style="margin-bottom: 30px;">
+                        <h4 style="color: var(--primary-color); font-size: 1.1rem;">Analysis</h4>
+                        <p>모든 상태 전이를 if-else로 처리하면 케이스마다 예외 처리가 필요했고, 새로운 상태 추가 시 기존 코드를 모두 검토해야 하는 문제가 있었습니다. 알고리즘 문제 풀이에서 비트마스킹으로 상태 조합을 효율적으로 다룬 경험을 떠올려, 상태를 플래그로 관리하면 중첩 케이스를 체계적으로 정리할 수 있다고 판단했습니다.</p>
+                    </div>
+                    
+                    <div style="margin-bottom: 30px;">
+                        <h4 style="color: var(--primary-color); font-size: 1.1rem;">Solution</h4>
+                        <p>캐릭터 상태 관리 컴포넌트를 구현하고, 각 상태를 비트 플래그로 정의했습니다. OR 연산으로 상태를 중첩시키고, AND 연산으로 특정 상태 조합을 검사하는 방식으로 전이 규칙을 단순화했습니다. 또한 특정 상태에서 행동을 제한하거나 강제하는 규칙을 컴포넌트 내부에 캡슐화했습니다.</p>
+                    </div>
+                    
+                    <div style="margin-bottom: 30px;">
+                        <h4 style="color: var(--primary-color); font-size: 1.1rem;">Result</h4>
+                        <p>상태 중첩을 자료구조 수준에서 처리해 분기문을 대폭 줄였고, 모든 상태 전이 규칙을 한 곳에서 관리할 수 있게 되었습니다. 새로운 상태를 추가할 때도 비트 플래그만 정의하면 되어 확장성이 크게 향상되었습니다.</p>
+                    </div>
                 </div>
                 
                 <div style="margin-bottom: 30px;">
-                    <h4>Analysis</h4>
-                    <p>원인 분석</p>
+                    <h4>내적 기반 8방향 입력 양자화</h4>
+                    
+                    <div style="margin-bottom: 30px; margin-top: 20px;">
+                        <h4 style="color: var(--primary-color); font-size: 1.1rem;">Problem</h4>
+                        <p>패드 스틱은 360도 연속 입력이 가능하지만, 원작은 8방향으로만 이동합니다. 단순히 각도를 45도씩 나누는 방식은 경계값 처리가 불안정했습니다.</p>
+                    </div>
+                    
+                    <div style="margin-bottom: 30px;">
+                        <h4 style="color: var(--primary-color); font-size: 1.1rem;">Analysis</h4>
+                        <p>입력 벡터를 가장 가까운 8개 방향축 중 하나로 투영하는 방식이 필요했습니다. 이전에 동료와 탱크 시뮬레이션을 만들 때 AI 탱크가 플레이어가 자기 앞에 있는지 뒤에 있는지 판단하는 로직을 구현하면서 내적을 활용한 경험이 있었고, 이를 응용하면 8방향 중 최적 방향을 수학적으로 명확히 결정할 수 있다고 생각했습니다.</p>
+                    </div>
+                    
+                    <div style="margin-bottom: 30px;">
+                        <h4 style="color: var(--primary-color); font-size: 1.1rem;">Solution</h4>
+                        <p>8개의 단위 방향 벡터를 미리 정의하고, 입력 벡터와 각각 내적 연산을 수행했습니다. 내적값이 가장 큰 방향을 최종 이동 방향으로 선택하는 방식으로 구현했습니다.</p>
+                    </div>
+                    
+                    <div style="margin-bottom: 30px;">
+                        <h4 style="color: var(--primary-color); font-size: 1.1rem;">Result</h4>
+                        <p>입력이 항상 8개 방향 중 하나로 안정적으로 정리되어, 원작과 유사한 명확한 이동 감각을 구현할 수 있었습니다.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Code Sample -->
+            <div id="project-2-code" class="project-card">
+                <span class="section-label">SUB: project-2-code</span>
+                <h3>코드 샘플</h3>
+                
+                <!-- Code Sample 1 -->
+                <div style="margin-bottom: 40px;">
+                    <h4>비트마스크 상태 추가 및 검증</h4>
+                    <div class="code-container">
+                        <pre><code class="language-cpp">bool UCSR_P_AComp_CharicStateMannage::AddState(int32 NewState)
+{
+    if (this->TotalControlState(NewState))
+    {
+        this->CurrentState = this->CurrentState | NewState;
+        UE_LOG(LogTemp, Warning, TEXT("%d %d"), this->CurrentState, NewState);
+        this->SpendStateToAnim();
+        return (true);
+    }
+    return (false);
+}
+
+bool UCSR_P_AComp_CharicStateMannage::CanAddJumpMove()
+{
+    if (this->CurrentState & (DIE | REBORN | PRESS | ATTACK | AIRSIT | MOVE))
+    {
+        return false;
+    }
+    if (this->CurrentState & JUMP)
+    {
+        return true;
+    }
+    return false;
+}</code></pre>
+                    </div>
+                    <p style="margin-top: 15px; color: var(--text-secondary);">AddState()에서 상태를 OR로 중첩시키고, 진입 가능 여부는 TotalControlState()로 단일 게이트에서 판단합니다.<br>
+                    CanAddJumpMove() 처럼 금지 상태를 비트마스크 방식으로 체크합니다.<br>
+                    결과적으로 상태 중첩에서 케이스 분기 복잡도를 줄이고 확장성에 기여합니다.</p>
                 </div>
                 
-                <div style="margin-bottom: 30px;">
-                    <h4>Solution</h4>
-                    <p>해결 방법</p>
-                </div>
-                
-                <div style="margin-bottom: 30px;">
-                    <h4>Result</h4>
-                    <p>결과</p>
+                <!-- Code Sample 2 -->
+                <div>
+                    <h4>8방향 내적 계산</h4>
+                    <div class="code-container">
+                        <pre><code class="language-cpp">// 패드의 방향이 8방향 중 어느곳에 더 가까운지를 판단합니다.
+int32 UCSR_P_AComp_CharicMovement::ChooseDirectionFlag(FVector2D& PadDirection_)
+{
+    // 전역 게임 인스턴스에서 8방향 배열을 가져옵니다.
+    UCSR_Direction_GameInstance* GameInstance = Cast<UCSR_Direction_GameInstance>(
+        UGameplayStatics::GetGameInstance(this->GetWorld())
+    );
+    const TArray<FVector2D>& Directions = GameInstance->Directions;
+    
+    float RelativeDValue = -1;
+    int32 flag = 0;
+    int32 answer = 0;
+    
+    for (FVector2D param : Directions)
+    {
+        flag = flag + 1;
+        float CalcDot = FVector2D::DotProduct(PadDirection_, param);
+        if (CalcDot > RelativeDValue)
+        {
+            answer = flag;
+            RelativeDValue = CalcDot;
+        }
+    }
+    return (answer);
+}</code></pre>
+                    </div>
+                    <p style="margin-top: 15px; color: var(--text-secondary);">8방향 축과 입력 벡터의 내적을 계산해, 가장 큰 내적 값을 갖는 방향을 선택합니다.<br>
+                    결과적으로 무한한 입력을 8방향으로 고정시켜 이동 조작감을 재현합니다.</p>
                 </div>
             </div>
             
             <!-- Learnings -->
             <div id="project-2-learnings" class="project-card">
                 <span class="section-label">SUB: project-2-learnings</span>
-                <h3>배운 점</h3>
-                <p>학습 내용 및 적용 사항</p>
+                <h3>배운 점 및 개선 사항</h3>
+                
+                <div style="margin-bottom: 30px;">
+                    <h4>기술적으로 배운 것</h4>
+                    <ul class="contribution-list">
+                        <li>게임의 조작감은 입력 처리, 카메라 로직, 캐릭터 이동, 애니메이션이 유기적으로 연결된 결과입니다. 각 요소의 규칙을 명확히 분리하면 디버깅과 조정이 훨씬 수월해진다는 것을 배웠습니다.</li>
+                        <li>상태가 중첩되는 복잡한 시스템에서는 비트마스크로 상태를 표현하면 전이 조건을 명확하게 정의할 수 있고, 새로운 기능 추가 시 확장성도 확보됩니다.</li>
+                        <li>Unreal Engine의 Animation Retargeting, Layered Blend 같은 기능을 활용하면 애니메이션 제작 리스크를 크게 줄일 수 있습니다.</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4>개선할 수 있는 부분</h4>
+                    <ul class="contribution-list">
+                        <li><strong>네트워크 동기화 지원:</strong> 현재는 로컬 협동 플레이만 지원하지만, Unreal의 Replication 시스템을 활용해 온라인 멀티플레이를 구현하면 원격 협동 플레이가 가능해집니다.</li>
+                        <li><strong>데이터 기반 상태 정의:</strong> 현재 상태가 코드에 하드코딩되어 있어서 상태 추가나 수정 시 컴파일이 필요합니다. JSON이나 DataTable로 상태 정의를 외부화하면 기획자가 직접 상태 규칙을 수정하고 테스트할 수 있어 반복 작업 속도가 빨라집니다.</li>
+                        <li><strong>PlayStation 컨트롤러 지원:</strong> 현재 Xbox 컨트롤러는 Unreal에서 기본 지원되어 정상 작동하지만, PlayStation 컨트롤러는 입력이 제대로 인식되지 않는 문제가 있습니다. Windows의 입력 장치 드라이버와 Unreal의 입력 매핑 방식 간 차이를 파악하고, 크로스 플랫폼 입력 처리를 추가하면 더 많은 플레이어가 편하게 플레이할 수 있을 것입니다.</li>
+                    </ul>
+                </div>
             </div>
             
-            <!-- Links -->
-            <div id="project-2-links" class="project-card">
-                <span class="section-label">SUB: project-2-links</span>
-                <h3>프로젝트 링크</h3>
+            <!-- Additional Resources -->
+            <div id="project-2-resources" class="project-card">
+                <span class="section-label">SUB: project-2-resources</span>
+                <h3>추가 학습 자료</h3>
+                <p style="margin-bottom: 20px;">프로젝트 진행 중 학습한 내용을 정리한 기술 블로그 포스트입니다.</p>
                 <div class="project-links">
-                    <a href="#" class="btn">GitHub</a>
-                    <a href="#" class="btn btn-secondary">Demo</a>
+                    <a href="#" class="btn btn-secondary" target="_blank">📝 화면 분할 상세 설명</a>
+                    <a href="#" class="btn btn-secondary" target="_blank">📝 카메라 이동 상세 설명</a>
                 </div>
             </div>
         </div>
@@ -756,6 +892,15 @@
                     <span class="meta-tag">장르: Puzzle</span>
                     <span class="meta-tag">역할: 개발자</span>
                     <span class="meta-tag">기간: 2023.01 - 2023.05</span>
+                </div>
+                
+                <!-- Links moved here -->
+                <div style="margin-top: 30px;">
+                    <h4>프로젝트 링크</h4>
+                    <div class="project-links">
+                        <a href="#" class="btn">GitHub</a>
+                        <a href="#" class="btn btn-secondary">Demo</a>
+                    </div>
                 </div>
             </div>
             
@@ -797,16 +942,6 @@
                 <span class="section-label">SUB: project-3-learnings</span>
                 <h3>배운 점</h3>
                 <p>학습 내용 및 적용 사항</p>
-            </div>
-            
-            <!-- Links -->
-            <div id="project-3-links" class="project-card">
-                <span class="section-label">SUB: project-3-links</span>
-                <h3>프로젝트 링크</h3>
-                <div class="project-links">
-                    <a href="#" class="btn">GitHub</a>
-                    <a href="#" class="btn btn-secondary">Demo</a>
-                </div>
             </div>
         </div>
     </section>
