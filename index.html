@@ -3,41 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>게임 클라이언트 개발자 포트폴리오</title>
+    <title>최성락 - 게임 클라이언트 개발자 포트폴리오</title>
     
     <!-- Highlight.js for Code Syntax Highlighting -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/cpp.min.js"></script>
     
-    <!--
-    ========================================
-    GitHub Pages 이미지 사용 가이드
-    ========================================
-    
-    📁 폴더 구조:
-    your-portfolio/
-    ├── index.html (이 파일)
-    └── images/
-        ├── profile.png
-        ├── tubble-main.png
-        ├── tubble-select-diagram.png
-        ├── tubble-doxygen.png
-        ├── ittakestwo-main.png
-        └── project3-main.png
-    
-    📝 이미지 업로드 방법:
-    1. 프로젝트 루트에 'images' 폴더 생성
-    2. 이미지 파일을 images 폴더에 저장
-    3. HTML에서 상대 경로로 참조: ./images/파일명.png
-    
-    💡 권장 이미지 형식:
-    - 형식: PNG, JPG (PNG 권장)
-    - 크기: 가로 1200px 이하
-    - 용량: 파일당 2MB 이하
-    
-    ========================================
-    -->
     <style>
         :root {
             --primary-color: #6366f1;
@@ -80,6 +52,51 @@
             min-height: 100vh;
             padding: 100px 0;
             position: relative;
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+            padding: 20px 0;
+        }
+        
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        nav .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        nav a:hover {
+            color: var(--primary-color);
         }
         
         /* Typography */
@@ -154,6 +171,7 @@
             display: flex;
             align-items: center;
             background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+            padding-top: 150px;
         }
         
         .about-grid {
@@ -342,7 +360,6 @@
             padding: 0;
         }
         
-        /* Highlight.js theme adjustments */
         .hljs {
             background: transparent;
             padding: 0;
@@ -383,6 +400,31 @@
             color: var(--primary-color);
         }
         
+        /* Education Cards - Compact */
+        .education-card-compact {
+            background: var(--bg-card);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 20px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+        
+        .education-card-compact::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+        }
+        
+        .education-card-compact:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
         /* Footer */
         #footer-section {
             min-height: auto;
@@ -410,6 +452,10 @@
         
         /* Responsive */
         @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+            
             h1 {
                 font-size: 2.5rem;
             }
@@ -424,6 +470,10 @@
             
             section {
                 padding: 60px 0;
+            }
+            
+            #about-me-section {
+                padding-top: 100px;
             }
             
             .about-grid {
@@ -444,19 +494,28 @@
 </head>
 <body>
 
+    <!-- NAVIGATION -->
+    <nav>
+        <div class="container">
+            <div class="logo">최성락</div>
+            <ul>
+                <li><a href="#about-me-section">About</a></li>
+                <li><a href="#project-1-section">Projects</a></li>
+                <li><a href="#education-section">Education</a></li>
+                <li><a href="#blog-section">Blog</a></li>
+                <li><a href="#footer-section">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
     <!-- SECTION: ABOUT ME -->
     <section id="about-me-section">
         <div class="container">
-            <span class="section-label">SECTION: about-me-section</span>
-            
             <div class="about-grid">
-                <!-- Left: Profile Image -->
                 <div class="profile-image-container">
-                    <!-- 이미지 교체: images/profile.png -->
                     <img src="./images/profile.png" alt="프로필 이미지" class="profile-image">
                 </div>
                 
-                <!-- Right: Name and Introduction -->
                 <div class="profile-content">
                     <h1>최성락</h1>
                     <p class="job-title">게임 클라이언트 개발자</p>
@@ -485,20 +544,13 @@
         </div>
     </section>
 
-    <!-- SECTION: PROJECT 1 -->
+    <!-- SECTION: PROJECT 1 - TubbleTubble -->
     <section id="project-1-section" class="project-section">
         <div class="container">
-            <span class="section-label">SECTION: project-1-section</span>
             <h2>TubbleTubble</h2>
             
-            <!-- Project Overview -->
             <div id="project-1-overview" class="project-card">
-                <span class="section-label">SUB: project-1-overview</span>
                 <h3>프로젝트 개요</h3>
-                <!-- 이미지 교체 방법:
-                     1. 프로젝트 루트에 images 폴더 생성
-                     2. 이미지 파일을 images 폴더에 저장 (예: tubble-main.png)
-                     3. 아래 src를 "./images/tubble-main.png"로 변경 -->
                 <img src="./images/tubble-main.png" alt="TubbleTubble 게임 스크린샷" style="width: 100%; border-radius: 12px; margin: 20px 0;">
                 <p>Human Fall Flat과 같이 협동을 하여 진행하는 간단한 멀티플레이 프로토타입입니다.<br>
                 게임 플레이 서버와 별개로 채팅 전용 서버를 분리해, 모듈화했습니다.</p>
@@ -510,19 +562,16 @@
                 </div>
                 <p><strong>팀 구성:</strong> 2명 (언리얼 개발자 2명)</p>
                 
-                <!-- Links moved here -->
                 <div style="margin-top: 30px;">
                     <h4>프로젝트 링크</h4>
                     <div class="project-links">
-                        <a href="https://github.com/ForNaggi" class="btn" target="_blank">GitHub Repository</a>
+                        <a href="https://github.com/ForNaggi/UnrealChatServer" class="btn" target="_blank">GitHub Repository</a>
                         <a href="https://www.youtube.com/watch?v=hI5eYPj5So4" class="btn btn-secondary" target="_blank">Demo Video</a>
                     </div>
                 </div>
             </div>
             
-            <!-- Contribution -->
             <div id="project-1-contribution" class="project-card">
-                <span class="section-label">SUB: project-1-contribution</span>
                 <h3>본인 기여 내용</h3>
                 <ul class="contribution-list">
                     <li>경량 멀티 채팅 서버 구현 (Winsock2 기반)</li>
@@ -531,9 +580,7 @@
                 </ul>
             </div>
             
-            <!-- Technical Challenge -->
             <div id="project-1-challenge" class="project-card">
-                <span class="section-label">SUB: project-1-challenge</span>
                 <h3>기술적 도전과 해결</h3>
                 
                 <div style="margin-bottom: 30px;">
@@ -551,7 +598,6 @@
                     <p>채팅 전용 서버를 구성하고, 게임 로직과는 별도로 통신하도록 구조를 분리했습니다. Windows에서는 Winsock2를 학습하여 적용하고, Select를 이용한 멀티플렉싱 방식으로 다중 클라이언트를 구현했습니다.</p>
                 </div>
                 
-                <!-- 이미지 파일: images/tubble-select-diagram.png -->
                 <img src="./images/tubble-select-diagram.png" alt="Select 기반 멀티플렉싱 다이어그램" style="width: 67%; max-width: 800px; border-radius: 8px; margin: 30px auto; display: block;">
                 
                 <div style="margin-bottom: 30px;">
@@ -579,18 +625,14 @@
                 
                 <div style="margin-top: 40px;">
                     <h4>Doxygen 주석 적용</h4>
-                    <!-- 이미지 파일: images/tubble-doxygen.png -->
                     <img src="./images/tubble-doxygen.png" alt="Doxygen 주석 예시" style="width: 100%; border-radius: 8px; margin: 15px 0;">
                     <p>FSocket 구현을 분석하던 중 Doxygen 주석을 알게 되었습니다. 프로젝트 전반에 Doxygen 스타일 주석을 적용하여 클래스와 함수 단위로 정리했으며, 그 결과 코드 리뷰와 구조 파악 시 빠르게 이해할 수 있어 유지보수성과 가독성을 향상시킬 수 있었습니다.</p>
                 </div>
             </div>
             
-            <!-- Code Sample -->
             <div id="project-1-code" class="project-card">
-                <span class="section-label">SUB: project-1-code</span>
                 <h3>코드 샘플</h3>
                 
-                <!-- Code Sample 1 -->
                 <div style="margin-bottom: 40px;">
                     <h4>fd_set 구성 + 서버/클라 소켓 등록</h4>
                     <div class="code-container">
@@ -608,7 +650,6 @@
                     ClientManager로 소켓 수집을 분리해, 모듈화했습니다.</p>
                 </div>
                 
-                <!-- Code Sample 2 -->
                 <div style="margin-bottom: 40px;">
                     <h4>select 실행 + 결과 처리(타임아웃/에러 분기)</h4>
                     <div class="code-container">
@@ -621,7 +662,6 @@
                     TIMEOUT/FAIL/SUCCESS로 상태 관리를 명확히 두었습니다.</p>
                 </div>
                 
-                <!-- Code Sample 3 -->
                 <div>
                     <h4>ready된 소켓만 처리(accept + recv/disconnect)</h4>
                     <div class="code-container">
@@ -640,9 +680,7 @@
                 </div>
             </div>
             
-            <!-- Learnings -->
             <div id="project-1-learnings" class="project-card">
-                <span class="section-label">SUB: project-1-learnings</span>
                 <h3>배운 점 및 개선 사항</h3>
                 
                 <div style="margin-bottom: 30px;">
@@ -666,17 +704,13 @@
         </div>
     </section>
 
-    <!-- SECTION: PROJECT 2 -->
+    <!-- SECTION: PROJECT 2 - It Takes Two -->
     <section id="project-2-section">
         <div class="container">
-            <span class="section-label">SECTION: project-2-section</span>
             <h2>It Takes Two (모작)</h2>
             
-            <!-- Project Overview -->
             <div id="project-2-overview" class="project-card">
-                <span class="section-label">SUB: project-2-overview</span>
                 <h3>프로젝트 개요</h3>
-                <!-- 이미지 교체: images/ittakestwo-main.png -->
                 <img src="./images/ittakestwo-main.png" alt="It Takes Two 게임 스크린샷" style="width: 100%; border-radius: 12px; margin: 20px 0;">
                 <p>It Takes Two의 오두막 챕터 공구통 보스전 구간을 재현했습니다. 협동 플레이의 조작감과 화면 UX를 Unreal C++로 구현했습니다.</p>
                 <div class="project-meta">
@@ -687,19 +721,16 @@
                 </div>
                 <p><strong>팀 구성:</strong> 5명 (언리얼 개발자 3명, 기획자 1명, TA 1명)</p>
                 
-                <!-- Links moved here -->
                 <div style="margin-top: 30px;">
                     <h4>프로젝트 링크</h4>
                     <div class="project-links">
-                        <a href="https://github.com/ItTakesTwo" class="btn" target="_blank">GitHub Repository</a>
-                        <a href="https://www.youtube.com/watch?v=x788uw" class="btn btn-secondary" target="_blank">Demo Video</a>
+                        <a href="https://github.com/ItTakesTwo-Metaverse/ItTakesTwo" class="btn" target="_blank">GitHub Repository</a>
+                        <a href="https://youtu.be/UKX-qx788uw" class="btn btn-secondary" target="_blank">Demo Video</a>
                     </div>
                 </div>
             </div>
             
-            <!-- Contribution -->
             <div id="project-2-contribution" class="project-card">
-                <span class="section-label">SUB: project-2-contribution</span>
                 <h3>본인 기여 내용</h3>
                 <ul class="contribution-list">
                     <li><strong>카메라/캐릭터 이동/애니메이션 구현:</strong> 캐릭터 이동 상태에 따라 카메라 규칙과 정면 기준을 분리해 조작감 향상</li>
@@ -710,9 +741,7 @@
                 </ul>
             </div>
             
-            <!-- Technical Challenge -->
             <div id="project-2-challenge" class="project-card">
-                <span class="section-label">SUB: project-2-challenge</span>
                 <h3>기술적 도전과 해결</h3>
                 
                 <div style="margin-bottom: 50px;">
@@ -764,12 +793,9 @@
                 </div>
             </div>
             
-            <!-- Code Sample -->
             <div id="project-2-code" class="project-card">
-                <span class="section-label">SUB: project-2-code</span>
                 <h3>코드 샘플</h3>
                 
-                <!-- Code Sample 1 -->
                 <div style="margin-bottom: 40px;">
                     <h4>비트마스크 상태 추가 및 검증</h4>
                     <div class="code-container">
@@ -803,7 +829,6 @@ bool UCSR_P_AComp_CharicStateMannage::CanAddJumpMove()
                     결과적으로 상태 중첩에서 케이스 분기 복잡도를 줄이고 확장성에 기여합니다.</p>
                 </div>
                 
-                <!-- Code Sample 2 -->
                 <div>
                     <h4>8방향 내적 계산</h4>
                     <div class="code-container">
@@ -838,9 +863,7 @@ int32 UCSR_P_AComp_CharicMovement::ChooseDirectionFlag(FVector2D& PadDirection_)
                 </div>
             </div>
             
-            <!-- Learnings -->
             <div id="project-2-learnings" class="project-card">
-                <span class="section-label">SUB: project-2-learnings</span>
                 <h3>배운 점 및 개선 사항</h3>
                 
                 <div style="margin-bottom: 30px;">
@@ -862,86 +885,645 @@ int32 UCSR_P_AComp_CharicMovement::ChooseDirectionFlag(FVector2D& PadDirection_)
                 </div>
             </div>
             
-            <!-- Additional Resources -->
             <div id="project-2-resources" class="project-card">
-                <span class="section-label">SUB: project-2-resources</span>
                 <h3>추가 학습 자료</h3>
                 <p style="margin-bottom: 20px;">프로젝트 진행 중 학습한 내용을 정리한 기술 블로그 포스트입니다.</p>
                 <div class="project-links">
-                    <a href="#" class="btn btn-secondary" target="_blank">📝 화면 분할 상세 설명</a>
-                    <a href="#" class="btn btn-secondary" target="_blank">📝 카메라 이동 상세 설명</a>
+                    <a href="https://velog.io/@flatroad/It-Takes-Two-%ED%99%94%EB%A9%B4-%EB%B6%84%ED%95%A0" class="btn btn-secondary" target="_blank">📝 화면 분할 상세 설명</a>
+                    <a href="https://velog.io/@flatroad/It-Takes-Two-%EC%B9%B4%EB%A9%94%EB%9D%BC-%EC%9D%B4%EB%8F%99" class="btn btn-secondary" target="_blank">📝 카메라 이동 상세 설명</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SECTION: PROJECT 3 -->
+    <!-- SECTION: PROJECT 3 - DualSense -->
     <section id="project-3-section" class="project-section">
         <div class="container">
-            <span class="section-label">SECTION: project-3-section</span>
-            <h2>프로젝트 3</h2>
+            <h2>Unreal RawInput 개선으로 DualSense 유선 D-pad 입력 지원</h2>
             
-            <!-- Project Overview -->
             <div id="project-3-overview" class="project-card">
-                <span class="section-label">SUB: project-3-overview</span>
                 <h3>프로젝트 개요</h3>
-                <!-- 이미지 교체: images/project3-main.png -->
-                <img src="./images/project3-main.png" alt="프로젝트 3 메인 이미지" style="width: 100%; border-radius: 12px; margin: 20px 0;">
-                <p>타이틀 및 대표 이미지</p>
+                <img src="./images/dualsense-main.png" alt="DualSense 프로젝트 메인 이미지" style="width: 100%; border-radius: 12px; margin: 20px 0;">
+                <p>Windows 환경에서 Unreal Engine이 유선 PlayStation 컨트롤러 DualSense의 입력을 받을 수 있도록 RawInput 플러그인을 분석하고, 누락된 D-pad 입력 처리를 직접 구현했습니다.</p>
                 <div class="project-meta">
-                    <span class="meta-tag">장르: Puzzle</span>
-                    <span class="meta-tag">역할: 개발자</span>
-                    <span class="meta-tag">기간: 2023.01 - 2023.05</span>
+                    <span class="meta-tag">분야: 입력 시스템 개선</span>
+                    <span class="meta-tag">역할: RawInput 분석 및 입력 시스템 개선</span>
+                    <span class="meta-tag">기간: 2025.03.21 - 2025.03.27</span>
+                    <span class="meta-tag">기술: Unreal Engine, C++, Windows RawInput/HID</span>
                 </div>
+                <p><strong>팀 구성:</strong> 1명 (개인 프로젝트)</p>
                 
-                <!-- Links moved here -->
                 <div style="margin-top: 30px;">
                     <h4>프로젝트 링크</h4>
                     <div class="project-links">
-                        <a href="#" class="btn">GitHub</a>
-                        <a href="#" class="btn btn-secondary">Demo</a>
+                        <a href="https://github.com/Potenup/PS-Controller" class="btn" target="_blank">GitHub Repository</a>
+                        <a href="https://youtu.be/fVFXsGatZ6w" class="btn btn-secondary" target="_blank">Demo Video</a>
                     </div>
                 </div>
             </div>
             
-            <!-- Contribution -->
             <div id="project-3-contribution" class="project-card">
-                <span class="section-label">SUB: project-3-contribution</span>
                 <h3>본인 기여 내용</h3>
-                <p>구현한 주요 기능</p>
+                <ul class="contribution-list">
+                    <li><strong>HID Report 구조 분석 및 D-pad 입력 위치 특정:</strong> Wireshark를 활용해 HID Report를 분석하고, 9번째 바이트에서 D-pad 값이 변화하는 것을 확인</li>
+                    <li><strong>RawInput 플러그인 입력 처리 로직 구현:</strong> D-pad 바이트 데이터를 4방향 버튼 상태로 변환하는 시스템 구현 및 입력 변경 사항을 플러그인 업데이트 흐름에 반영</li>
+                    <li><strong>DualSense 장치 인식 및 통합:</strong> Unreal RawInput 설정에 DualSense 장치를 등록하고 입력 검증</li>
+                </ul>
             </div>
             
-            <!-- Technical Challenge -->
             <div id="project-3-challenge" class="project-card">
-                <span class="section-label">SUB: project-3-challenge</span>
                 <h3>기술적 도전과 해결</h3>
                 
                 <div style="margin-bottom: 30px;">
-                    <h4>Problem</h4>
-                    <p>문제 상황</p>
+                    <h4 style="color: var(--primary-color); font-size: 1.1rem;">Problem</h4>
+                    <p>Windows는 PlayStation 전용 API를 제공하지 않아 DirectInput이나 RawInput으로 입력을 처리해야 하는데, Unreal Engine은 기본적으로 PlayStation 컨트롤러를 즉시 사용하기 어려웠습니다. RawInput 플러그인이 HID Report 매핑을 지원하긴 하지만, PlayStation 컨트롤러는 Unreal이 기대하는 표준 매핑과 달라서 D-pad 입력이 처리되지 않았습니다. DS4Windows나 Steam 같은 외부 프로그램으로 우회할 수 있지만, 외부 도구 없이 Unreal 내부에서 해결하고자 했습니다.</p>
                 </div>
                 
                 <div style="margin-bottom: 30px;">
-                    <h4>Analysis</h4>
-                    <p>원인 분석</p>
+                    <h4 style="color: var(--primary-color); font-size: 1.1rem;">Analysis</h4>
+                    <p>Wireshark로 원시 HID Report 데이터를 캡처해 분석한 결과, D-pad 입력 시 9번째 바이트의 값이 변화하는 것을 확인했습니다.</p>
+                    <img src="./images/dualsense-wireshark.png" alt="Wireshark HID Report 분석 화면" style="width: 100%; border-radius: 8px; margin: 20px 0;">
+                    <p>RawInput 플러그인 코드를 확인해보니 9번째 바이트에 대한 D-pad 해석 로직이 없었습니다. 이 바이트 값을 어떻게 버튼 상태로 변환할지 직접 구현이 필요했습니다.</p>
                 </div>
                 
                 <div style="margin-bottom: 30px;">
-                    <h4>Solution</h4>
-                    <p>해결 방법</p>
+                    <h4 style="color: var(--primary-color); font-size: 1.1rem;">Solution</h4>
+                    <p>RawInput 설정에 DualSense 장치 정보를 등록해 HID Report를 받을 수 있도록 했습니다.</p>
+                    <img src="./images/dualsense-rawinput.png" alt="Unreal RawInput Edit 화면" style="width: 100%; border-radius: 8px; margin: 20px 0;">
+                    <p>RawInputWindows.cpp에서 ReportPtr[8], 즉 9번째 바이트의 값을 읽고, 8방향과 중립을 포함한 D-pad 입력을 Up, Down, Left, Right 4개 버튼 상태로 변환해 ButtonData 배열에 매핑했습니다. 입력 상태 변경은 bNeedsUpdate 플래그로 표시해서 엔진의 입력 업데이트 흐름에 반영되도록 처리했습니다.</p>
                 </div>
                 
                 <div style="margin-bottom: 30px;">
-                    <h4>Result</h4>
-                    <p>결과</p>
+                    <h4 style="color: var(--primary-color); font-size: 1.1rem;">Result</h4>
+                    <p>유선 연결 기준으로 DualSense D-pad 입력이 Unreal 내부 입력 시스템으로 정상 전달되도록 개선했습니다. 왜 작동하지 않는지 추측으로 끝내지 않고, 원시 HID Report부터 플러그인 내부까지 추적해서 누락된 부분을 찾아냈고, 이를 직접 구현해서 해결했습니다.</p>
                 </div>
             </div>
             
-            <!-- Learnings -->
+            <div id="project-3-code" class="project-card">
+                <h3>코드 샘플</h3>
+                
+                <div>
+                    <h4>D-pad 입력 HID Report 매핑 및 버튼 상태 변환</h4>
+                    <div class="code-container">
+                        <pre><code class="language-cpp">if (ReportPtr[0] == 0x01 && InRawInputDataBuffer->data.hid.dwSizeHid > 8)
+{
+    uint8 dpadValue = ReportPtr[8] & 0x0F;
+
+    UE_LOG(LogRawInputWindows, Warning, TEXT("DualSense D-pad value: %d"), dpadValue);
+
+    bool isDpadUp = (dpadValue == 0 || dpadValue == 1 || dpadValue == 7);
+    bool isDpadRight = (dpadValue == 1 || dpadValue == 2 || dpadValue == 3);
+    bool isDpadDown = (dpadValue == 3 || dpadValue == 4 || dpadValue == 5);
+    bool isDpadLeft = (dpadValue == 5 || dpadValue == 6 || dpadValue == 7);
+
+    const int32 DpadUpIndex = 11;
+    const int32 DpadRightIndex = 12;
+    const int32 DpadDownIndex = 13;
+    const int32 DpadLeftIndex = 14;
+
+    if (DpadUpIndex < DeviceEntry->ButtonData.Num())
+        DeviceEntry->ButtonData[DpadUpIndex].bButtonState = isDpadUp;
+    ...
+    DeviceEntry->bNeedsUpdate = true;
+}</code></pre>
+                    </div>
+                    <p style="margin-top: 15px; color: var(--text-secondary);">Wireshark로 확인한 D-pad 값의 위치인 9번째 바이트를 ReportPtr[8]에서 읽어 하위 4비트로 방향 값을 추출합니다.<br>
+                    이 값을 Up, Down, Left, Right 4개 버튼 상태로 변환해 Unreal의 버튼 입력 모델에 맞추고, bNeedsUpdate를 설정해 입력 변경이 플러그인의 업데이트 흐름에 반영되도록 합니다.</p>
+                </div>
+            </div>
+            
             <div id="project-3-learnings" class="project-card">
-                <span class="section-label">SUB: project-3-learnings</span>
+                <h3>배운 점 및 개선 사항</h3>
+                
+                <div style="margin-bottom: 30px;">
+                    <h4>기술적으로 배운 것</h4>
+                    <ul class="contribution-list">
+                        <li>입력이 작동하지 않을 때 단순히 기능만 체크하고 끝내는 것이 아니라, 원시 HID Report 데이터부터 엔진 플러그인 매핑, 최종 게임 입력까지 단계별로 추적하며 원인을 좁혀가는 디버깅 과정을 경험했습니다.</li>
+                        <li>Unreal의 게임플레이 레벨뿐만 아니라 플러그인과 OS 입력 계층까지 내려가서 문제를 직접 해결하는 것이 생각보다 복잡하지 않다는 걸 알게 되었고, 이런 접근이 실제 개발에서도 유용하다는 것을 느꼈습니다.</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4>개선할 수 있는 부분</h4>
+                    <ul class="contribution-list">
+                        <li><strong>무선 블루투스 컨트롤러 지원:</strong> 유선과 무선의 HID Report 구조가 달라 별도 매핑이 필요합니다. 현재는 장치 이름으로 구분을 시도했지만, 더 안정적인 식별 방법과 블루투스 전용 바이트 매핑을 추가해야 합니다.</li>
+                        <li><strong>다중 컨트롤러 입력 처리:</strong> 컨트롤러를 2개 이상 연결하면 입력이 올바르게 분배되지 않는 문제가 있습니다. 장치별 고유 식별자를 활용한 입력 매핑 구조를 개선해서 플레이어마다 컨트롤러 구분이 명확히 되도록 해야 합니다.</li>
+                        <li><strong>핫플러그 안정성 개선:</strong> 게임 실행 중 컨트롤러를 연결하거나 해제할 때 즉시 인식되지 않는 문제가 있습니다. 현재는 2초마다 체크하는 방식이지만, 장치 연결/해제 시점에 바로 감지하는 방식으로 바꾸면 더 빠르고 안정적으로 처리할 수 있습니다.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: PROJECT 4 - Console Engine -->
+    <section id="project-4-section">
+        <div class="container">
+            <h2>게임 엔진 아키텍처 학습: Input-Update-Render 루프 구현</h2>
+            
+            <div id="project-4-overview" class="project-card">
+                <h3>프로젝트 개요</h3>
+                <img src="./images/console-engine-main.png" alt="Console Engine 프로젝트 메인 이미지" style="width: 100%; border-radius: 12px; margin: 20px 0;">
+                <p>상용 게임 엔진(Unreal)의 핵심 아키텍처를 이해하기 위해 Windows 콘솔 환경에서 Input → Update → Render → Present 루프를 직접 구현했습니다. Level-Actor 구조와 생명주기 관리를 통해 엔진의 기본 설계 원리를 학습했으며, 구현한 프레임워크 위에 A* 경로탐색 시뮬레이터를 제작해 실용성을 검증했습니다.</p>
+                <div class="project-meta">
+                    <span class="meta-tag">분야: 게임 엔진 아키텍처</span>
+                    <span class="meta-tag">역할: 엔진 및 시뮬레이터 전체 구현</span>
+                    <span class="meta-tag">기간: 2025.02.01 - 2025.02.27</span>
+                    <span class="meta-tag">기술: C++, Windows API, 콘솔 렌더링</span>
+                </div>
+                <p><strong>팀 구성:</strong> 1명 (개인 프로젝트)</p>
+                
+                <div style="margin-top: 30px;">
+                    <h4>프로젝트 링크</h4>
+                    <div class="project-links">
+                        <a href="https://github.com/Potenup/Potenup_SecondProject_AStarAlgorithmSymul" class="btn" target="_blank">GitHub Repository</a>
+                        <a href="https://youtu.be/EGKwK7O3WLw" class="btn btn-secondary" target="_blank">Demo Video</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="project-4-contribution" class="project-card">
+                <h3>본인 기여 내용</h3>
+                <ul class="contribution-list">
+                    <li><strong>엔진 루프 구성:</strong> Unreal Engine의 Tick 시스템과 유사하게 프레임마다 입력 처리 → 업데이트 → 렌더링 → 화면 출력 순서가 유지되도록 구현했습니다.</li>
+                    <li><strong>Level-Actor 구조 설계:</strong> Unreal의 World-Actor 관계를 참고하여 Level이 Actor를 관리하고 Update/Draw를 호출하는 구조를 구현했습니다.</li>
+                    <li><strong>Actor 생명주기 관리:</strong> Unreal의 지연 삭제(Deferred Destroy) 패턴을 적용하여 순회 중 Actor 추가/삭제로 인한 크래시를 방지했습니다.</li>
+                    <li><strong>ScreenBuffer 렌더 시스템:</strong> 화면을 버퍼에 먼저 구성한 뒤 한 번에 출력하는 방식으로 깜빡임 없는 렌더링을 구현했습니다.</li>
+                    <li><strong>Dirty Render 최적화:</strong> 변경된 셀만 표시하여 불필요한 렌더링을 제거하는 최적화를 적용했습니다.</li>
+                    <li><strong>콘솔 UI 시스템:</strong> ButtonActor로 hover와 클릭 처리, 콜백 기반 상태 전이를 구현했습니다.</li>
+                </ul>
+            </div>
+            
+            <div id="project-4-challenge" class="project-card">
+                <h3>기술적 도전과 해결</h3>
+                
+                <div style="margin-bottom: 50px;">
+                    <h4>콘솔 출력 깜빡임과 프레임 제어</h4>
+                    
+                    <div style="margin-bottom: 30px; margin-top: 20px;">
+                        <h4 style="color: var(--primary-color); font-size: 1.1rem;">Problem</h4>
+                        <p>커서 기반 출력은 출력 순서가 불안정하고, 프레임 단위로 렌더링 흐름을 제어하기 어려웠습니다. 화면이 깜빡이고 잔상이 남는 문제가 발생했습니다.</p>
+                    </div>
+                    
+                    <div style="margin-bottom: 30px;">
+                        <h4 style="color: var(--primary-color); font-size: 1.1rem;">Analysis</h4>
+                        <p>화면을 완성하기 전에 부분적으로 출력하면 깜빡임과 잔상이 반복됩니다. 버퍼링 없이 직접 출력하는 방식은 화면을 그리는 작업과 화면에 보여주는 작업을 나누기 어려웠습니다.</p>
+                    </div>
+                    
+                    <div style="margin-bottom: 30px;">
+                        <h4 style="color: var(--primary-color); font-size: 1.1rem;">Solution</h4>
+                        <p>ScreenBuffer를 만들어서 화면을 버퍼에 먼저 그린 뒤 한 번에 출력하는 방식으로 바꿨습니다. 이렇게 하니 그리는 작업과 출력하는 작업을 확실히 나눌 수 있었습니다.</p>
+                    </div>
+                    
+                    <div style="margin-bottom: 30px;">
+                        <h4 style="color: var(--primary-color); font-size: 1.1rem;">Result</h4>
+                        <p>화면 갱신이 안정화되었고, 엔진 루프에서 Render와 Present 단계가 명확히 구분되어 Unreal Engine의 렌더링 파이프라인 개념을 이해하는 데 도움이 되었습니다.</p>
+                    </div>
+                </div>
+                
+                <div style="margin-bottom: 50px;">
+                    <h4>Actor 생명주기 관리와 순회 안정성</h4>
+                    
+                    <div style="margin-bottom: 30px; margin-top: 20px;">
+                        <h4 style="color: var(--primary-color); font-size: 1.1rem;">Problem</h4>
+                        <p>Update/Draw 순회 중 Actor가 추가되거나 삭제되면 컨테이너 참조가 깨지고 크래시가 발생했습니다.</p>
+                    </div>
+                    
+                    <div style="margin-bottom: 30px;">
+                        <h4 style="color: var(--primary-color); font-size: 1.1rem;">Analysis</h4>
+                        <p>Actor 생명주기 정리가 여러 위치에 흩어져 있으면 타이밍을 예측하기 어렵습니다. 순회 중 컨테이너 변경은 반복자 무효화를 일으킵니다.</p>
+                    </div>
+                    
+                    <div style="margin-bottom: 30px;">
+                        <h4 style="color: var(--primary-color); font-size: 1.1rem;">Solution</h4>
+                        <p>Unreal의 Deferred Destroy 패턴을 참고하여, Destroy() 호출 시 즉시 삭제하지 않고 만료 표시만 남기고, 실제 정리는 프레임 끝 한 지점(ProcessAddedAndDestroyedActor)에서만 처리하도록 규칙을 고정했습니다.</p>
+                    </div>
+                    
+                    <div style="margin-bottom: 30px;">
+                        <h4 style="color: var(--primary-color); font-size: 1.1rem;">Result</h4>
+                        <p>Update/Draw 순회가 안정화되었고, 추가 기능이 늘어나도 정리 타이밍이 흔들리지 않습니다. Unreal Engine이 왜 PendingKill 개념을 사용하는지 이해할 수 있었습니다.</p>
+                    </div>
+                </div>
+                
+                <div style="margin-bottom: 30px;">
+                    <h4>렌더링 비용 최적화</h4>
+                    
+                    <div style="margin-bottom: 30px; margin-top: 20px;">
+                        <h4 style="color: var(--primary-color); font-size: 1.1rem;">Problem</h4>
+                        <p>보드 전체를 매 프레임 다시 그리는 방식은 보드 크기가 커질수록 비효율적이었습니다.</p>
+                    </div>
+                    
+                    <div style="margin-bottom: 30px;">
+                        <h4 style="color: var(--primary-color); font-size: 1.1rem;">Analysis</h4>
+                        <p>A* 시뮬레이션에서 프레임마다 변하는 셀은 일부인데, 전체를 다시 그리는 구조였습니다.</p>
+                    </div>
+                    
+                    <div style="margin-bottom: 30px;">
+                        <h4 style="color: var(--primary-color); font-size: 1.1rem;">Solution</h4>
+                        <p>변경된 셀만 Dirty로 표시하고, Dirty 셀만 다시 그리도록 변경했습니다. 평균 갱신 셀 수를 화면에 표시해 최적화 효과를 확인했습니다.</p>
+                    </div>
+                    
+                    <div style="margin-bottom: 30px;">
+                        <h4 style="color: var(--primary-color); font-size: 1.1rem;">Result</h4>
+                        <p>매 프레임 전체 갱신에서 변경 영역만 갱신하는 방식으로 전환하여 렌더링 비용을 크게 절감했습니다. 시뮬레이션 단계가 길어져도 출력 비용이 급증하지 않습니다.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="project-4-code" class="project-card">
+                <h3>코드 샘플</h3>
+                
+                <div style="margin-bottom: 40px;">
+                    <h4>엔진 루프와 프레임 끝 정리</h4>
+                    <div class="code-container">
+                        <pre><code class="language-cpp">while (true)
+{
+    if (quit) break;
+
+    QueryPerformanceCounter(&time);
+    currentTime = time.QuadPart;
+
+    float deltaTime = float(currentTime - previousTime) / float(frequency.QuadPart);
+    if (deltaTime >= targetOneFrameTime)
+    {
+        ProcessInput();
+        Update(deltaTime);
+        Draw();
+
+        SavePreviouseKeyStates();
+        previousTime = currentTime;
+
+        if (mainLevel) mainLevel->ProcessAddedAndDestroyedActor();
+    }
+}</code></pre>
+                    </div>
+                    <p style="margin-top: 15px; color: var(--text-secondary);">프레임 끝에서만 Actor 정리를 수행하는 안전 지점을 엔진 루프에 고정했습니다.<br>
+                    Update/Draw 순회 안정성이 확보되며, Unreal Engine의 틱 시스템과 유사한 구조를 구현했습니다.</p>
+                </div>
+                
+                <div>
+                    <h4>Dirty Render 최적화</h4>
+                    <div class="code-container">
+                        <pre><code class="language-cpp">if (dirtyControl_)
+{
+    for (int y = 0; y < mapInfo_.vertical_; ++y)
+    {
+        for (int x = 0; x < mapInfo_.horizontal_; ++x)
+        {
+            if (!dirtyCheckBoard_[y][x]) continue;
+
+            char c = mapInfo_.map_[y][x];
+            Color cColor = Color::White;
+
+            switch (c)
+            {
+            case GameObj::wall:  cColor = Color::Red;   break;
+            case GameObj::empty: cColor = Color::Black; break;
+            default: break;
+            }
+
+            char str[2] = { c, 0 };
+            Engine::Get().Draw(Vector2(x, y), str, cColor);
+
+            dirtyCheckBoard_[y][x] = false;
+        }
+    }
+}
+dirtyControl_ = false;</code></pre>
+                    </div>
+                    <p style="margin-top: 15px; color: var(--text-secondary);">렌더링 비용이 보드 크기보다 변경량에 비례하도록 구조를 개선했습니다.<br>
+                    변경된 셀만 갱신하여 불필요한 렌더링을 제거했습니다.</p>
+                </div>
+            </div>
+            
+            <div id="project-4-learnings" class="project-card">
+                <h3>배운 점 및 개선 사항</h3>
+                
+                <div style="margin-bottom: 30px;">
+                    <h4>기술적으로 배운 것</h4>
+                    <ul class="contribution-list">
+                        <li><strong>Unreal Engine의 GameplayFramework 이해:</strong> 직접 구현하면서 왜 Actor 기반 구조가 효율적인지, Tick 시스템이 왜 중요한지 체감했습니다. Level-Actor 관계, 생명주기 관리, Render-Present 분리 같은 개념을 몸으로 익혔습니다.</li>
+                        <li><strong>엔진 내부 동작 원리 추론 능력:</strong> Unreal Engine을 사용할 때 내부적으로 어떤 일이 일어나는지 추론할 수 있게 되어, 디버깅과 최적화에 도움이 됩니다.</li>
+                        <li><strong>변경 영역 추적의 중요성:</strong> 화면 갱신은 전체를 반복 출력하기보다 변경된 영역만 다시 그리는 방식이 확장에 유리하다는 것을 확인했습니다.</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4>개선할 수 있는 부분</h4>
+                    <ul class="contribution-list">
+                        <li><strong>렌더 레이어 분리:</strong> 보드, UI, 오버레이를 분리하면 각 영역에 다른 갱신 규칙을 적용하기 쉽습니다. 보드는 Dirty 기반, UI는 매 프레임 갱신처럼 정리할 수 있습니다.</li>
+                        <li><strong>Unreal의 Subsystem 패턴 적용:</strong> InputManager, RenderManager를 별도 시스템으로 분리하면 Unreal의 GameInstance Subsystem과 유사한 구조를 익힐 수 있습니다.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: PROJECT 5 - Cub3D -->
+    <section id="project-5-section" class="project-section">
+        <div class="container">
+            <h2>Cub3D</h2>
+            
+            <div id="project-5-overview" class="project-card">
+                <h3>프로젝트 개요</h3>
+                <img src="./images/cub3d-main.png" alt="Cub3D 게임 스크린샷" style="width: 100%; border-radius: 12px; margin: 20px 0;">
+                <p>42Seoul 과제로 진행한 레이캐스팅 기반 3D 렌더링 프로젝트.<br>
+                2D 격자 맵을 DDA 알고리즘으로 탐색하여 1인칭 시점 화면을 구현하며, 저수준 그래픽 프로그래밍과 수학적 렌더링 원리를 학습.</p>
+                <div class="project-meta">
+                    <span class="meta-tag">장르: 1인칭 탐색, 던전 뷰어</span>
+                    <span class="meta-tag">역할: 렌더링 시스템 구현</span>
+                    <span class="meta-tag">기간: 2023.05.01 - 2023.05.29</span>
+                    <span class="meta-tag">기술: C, MiniLibX, DDA 알고리즘, Raycasting</span>
+                </div>
+                <p><strong>팀 구성:</strong> 2명</p>
+                
+                <div style="margin-top: 30px;">
+                    <h4>프로젝트 링크</h4>
+                    <div class="project-links">
+                        <a href="https://github.com/Alice-inNovember/42_Cub3D" class="btn" target="_blank">GitHub Repository</a>
+                        <a href="https://youtu.be/NSG-jEjes0E" class="btn btn-secondary" target="_blank">Demo Video</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="project-5-contribution" class="project-card">
+                <h3>본인 기여 내용</h3>
+                <ul class="contribution-list">
+                    <li><strong>레이캐스팅 기반 화면 출력:</strong> 화면 세로 줄마다 광선을 쏘고, 벽까지 거리로 높이를 계산해 한 프레임 구성. 프레임 단위 렌더링 루프를 처음 구현하며 게임 엔진의 기본 흐름 이해</li>
+                    <li><strong>DDA 알고리즘으로 벽 충돌 탐색:</strong> 격자 맵에서 광선이 지나는 칸을 순차 추적해 첫 충돌 지점 탐색. 불안정한 각도에서도 안정적으로 작동하도록 초기화 로직 정리</li>
+                    <li><strong>벽 텍스처 매핑:</strong> 충돌 면 방향과 위치로 텍스처 좌표를 계산하고 화면에 맞게 샘플링. 회전 시 벽이 휘어 보이는 왜곡 현상을 수직 거리 계산으로 해결</li>
+                    <li><strong>미니맵 최적화:</strong> 배경은 미리 이미지로 생성하고 플레이어 위치만 갱신하도록 구성. 불필요한 타일 단위 재렌더링을 제거해 프레임 안정화</li>
+                </ul>
+            </div>
+            
+            <div id="project-5-challenge" class="project-card">
+                <h3>기술적 도전과 해결</h3>
+                
+                <div style="margin-bottom: 40px;">
+                    <h4>1. 특정 각도에서 벽 탐색이 멈추는 문제</h4>
+                    
+                    <div style="margin-bottom: 20px;">
+                        <h4 style="color: var(--primary-color); font-size: 1.1rem;">Problem</h4>
+                        <p>시야각에 따라 DDA가 같은 칸을 반복하며 무한 루프에 빠짐</p>
+                    </div>
+                    
+                    <div style="margin-bottom: 20px;">
+                        <h4 style="color: var(--primary-color); font-size: 1.1rem;">Solution</h4>
+                        <p>광선 방향으로 step을 먼저 확정하고, first_dist를 정확히 초기화. 더 가까운 축부터 한 칸씩 이동하도록 루프 고정</p>
+                    </div>
+                    
+                    <div style="margin-bottom: 20px;">
+                        <h4 style="color: var(--primary-color); font-size: 1.1rem;">Result</h4>
+                        <p>모든 각도에서 첫 충돌 지점을 안정적으로 탐색</p>
+                    </div>
+                </div>
+                
+                <div style="margin-bottom: 40px;">
+                    <h4>2. 회전 시 벽이 휘어 보이는 왜곡</h4>
+                    
+                    <div style="margin-bottom: 20px;">
+                        <h4 style="color: var(--primary-color); font-size: 1.1rem;">Problem</h4>
+                        <p>광선 길이로 벽 높이를 계산하면 화면 가장자리에서 거리가 과장됨</p>
+                    </div>
+                    
+                    <div style="margin-bottom: 20px;">
+                        <h4 style="color: var(--primary-color); font-size: 1.1rem;">Solution</h4>
+                        <p>카메라 화면 평면에 수직인 거리 값으로 벽 높이를 계산하도록 변경</p>
+                    </div>
+                    
+                    <div style="margin-bottom: 20px;">
+                        <h4 style="color: var(--primary-color); font-size: 1.1rem;">Result</h4>
+                        <p>회전 중에도 벽 높이가 일정하게 유지되어 왜곡 제거</p>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4>3. 미니맵이 프레임에 부담을 주는 문제</h4>
+                    
+                    <div style="margin-bottom: 20px;">
+                        <h4 style="color: var(--primary-color); font-size: 1.1rem;">Problem</h4>
+                        <p>타일 단위로 매 프레임 다시 그리면 불필요한 픽셀 연산 누적</p>
+                    </div>
+                    
+                    <div style="margin-bottom: 20px;">
+                        <h4 style="color: var(--primary-color); font-size: 1.1rem;">Solution</h4>
+                        <p>배경은 구역별 이미지로 미리 생성, 플레이어 위치만 갱신</p>
+                    </div>
+                    
+                    <div style="margin-bottom: 20px;">
+                        <h4 style="color: var(--primary-color); font-size: 1.1rem;">Result</h4>
+                        <p>미니맵을 켠 상태에서도 프레임 안정성 유지</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="project-5-code" class="project-card">
+                <h3>코드 샘플</h3>
+                
+                <div style="margin-bottom: 40px;">
+                    <h4>DDA 핵심 루프</h4>
+                    <div class="code-container">
+                        <pre><code class="language-c">void ray_casting(t_map *map, t_detail_info *info)
+{
+    while (info->hit == 0)
+    {
+        if (info->first_dist_x < info->first_dist_y)
+        {
+            info->first_dist_x += info->squ_per_dist_x;
+            info->map_x += info->step_x;
+            info->side = 0;
+        }
+        else
+        {
+            info->first_dist_y += info->squ_per_dist_y;
+            info->map_y += info->step_y;
+            info->side = 1;
+        }
+        if (map->map[info->map_x][info->map_y] == '1')
+            info->hit = 1;
+    }
+}</code></pre>
+                    </div>
+                    <p style="margin-top: 15px; color: var(--text-secondary);">first_dist_x, first_dist_y를 비교해 더 가까운 축부터 한 칸 이동하며 벽 탐색</p>
+                </div>
+                
+                <div>
+                    <h4>수직 거리로 벽 높이 안정화</h4>
+                    <div class="code-container">
+                        <pre><code class="language-c">void calc_dist_valti(t_detail_info *info)
+{
+    if (info->side == 0)
+        info->verti_wall_
+        dist = info->first_dist_x - info->squ_per_dist_x;
+    else
+        info->verti_wall_dist = info->first_dist_y - info->squ_per_dist_y;
+}
+
+void draw_pixel_st_en(t_other_draw *draw, t_detail_info *info)
+{
+    draw->away_dist = (int)(G_H / info->verti_wall_dist);
+    draw->draw_start = (-draw->away_dist / 2) + (G_H / 2);
+    if (draw->draw_start < 0)
+        draw->draw_start = 0;
+    draw->draw_end = (draw->away_dist / 2) + (G_H / 2);
+    if (draw->draw_end >= G_H)
+        draw->draw_end = G_H - 1;
+}</code></pre>
+                    </div>
+                    <p style="margin-top: 15px; color: var(--text-secondary);">DDA 종료 후 화면 평면에 수직인 거리를 계산하고, 그 값으로 벽 높이와 화면 그릴 구간을 결정</p>
+                </div>
+            </div>
+            
+            <div id="project-5-learnings" class="project-card">
                 <h3>배운 점</h3>
-                <p>학습 내용 및 적용 사항</p>
+                
+                <ul class="contribution-list">
+                    <li><strong>DDA 알고리즘 이해:</strong> 직선은 결국 격자 칸을 어떤 순서로 지나가는지의 문제. 더 가까운 칸을 고르는 선택이 반복되면서 직선이 만들어짐을 이해</li>
+                    <li><strong>수학적 렌더링 원리:</strong> 카메라처럼 화면 평면을 가정하면 1인칭 화면이 수학적으로 정리됨. 광선 길이가 아닌 화면 평면 기준 거리로 계산해야 안정적</li>
+                    <li><strong>렌더링 최적화 경험:</strong> 고정되는 요소는 미리 생성하고, 움직이는 요소만 갱신하면 프레임이 안정된다는 것을 실제 구현으로 체감</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: EDUCATION & ACTIVITIES -->
+    <section id="education-section">
+        <div class="container">
+            <h2>Education & Activities</h2>
+            
+            <div style="display: grid; gap: 20px;">
+                <!-- 42Seoul - Compact -->
+                <div class="education-card-compact" style="position: relative;">
+                    <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 12px;">
+                        <div>
+                            <h3 style="margin-bottom: 5px; font-size: 1.3rem;">42Seoul 6기</h3>
+                            <p style="color: var(--text-muted); margin-bottom: 0; font-size: 0.95rem;">2022.03 - 2024.02</p>
+                        </div>
+                        <a href="https://42seoul.kr" class="btn btn-secondary" target="_blank" style="padding: 6px 18px; font-size: 0.9rem;">공식 사이트</a>
+                    </div>
+                    <p style="margin-bottom: 12px; font-size: 1rem;">동료 학습 기반 소프트웨어 교육. C/C++ 시스템 프로그래밍과 협업 능력 향상.</p>
+                    <ul class="contribution-list" style="margin: 8px 0;">
+                        <li style="padding: 8px 0; font-size: 0.95rem;">C 표준 라이브러리 직접 구현 및 메모리 조작 학습</li>
+                        <li style="padding: 8px 0; font-size: 0.95rem;">멀티 스레드 동기화 (철학자 문제, 뮤텍스/세마포어)</li>
+                        <li style="padding: 8px 0; font-size: 0.95rem;">C++ IRC 채팅 서버 (Poll 멀티플렉싱)</li>
+                    </ul>
+                </div>
+                
+                <!-- 메타버스 아카데미 - Compact -->
+                <div class="education-card-compact" style="position: relative;">
+                    <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 12px;">
+                        <div>
+                            <h3 style="margin-bottom: 5px; font-size: 1.3rem;">메타버스 아카데미 3기 (Unreal)</h3>
+                            <p style="color: var(--text-muted); margin-bottom: 0; font-size: 0.95rem;">2024.07 - 2024.11</p>
+                        </div>
+                        <a href="https://mtvs.kr" class="btn btn-secondary" target="_blank" style="padding: 6px 18px; font-size: 0.9rem;">공식 사이트</a>
+                    </div>
+                    <p style="margin-bottom: 12px; font-size: 1rem;">Unreal Engine 게임 개발 전문 과정. Blueprint/C++ 실전 프로젝트.</p>
+                    <ul class="contribution-list" style="margin: 8px 0;">
+                        <li style="padding: 8px 0; font-size: 0.95rem;">Blueprint/C++ 게임플레이 시스템 및 애니메이션 구축</li>
+                        <li style="padding: 8px 0; font-size: 0.95rem;">RPC/Replication 기반 멀티플레이 개발</li>
+                        <li style="padding: 8px 0; font-size: 0.95rem;">게임 모작 프로젝트로 타 직군 협업 경험</li>
+                    </ul>
+                </div>
+                
+                <!-- 포텐업 - Compact -->
+                <div class="education-card-compact" style="position: relative;">
+                    <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 12px;">
+                        <div>
+                            <h3 style="margin-bottom: 5px; font-size: 1.3rem;">원티드 - 포텐업 1기 (Unreal)</h3>
+                            <p style="color: var(--text-muted); margin-bottom: 0; font-size: 0.95rem;">2024.12 - 2025.06</p>
+                        </div>
+                        <a href="https://www.wanted.co.kr/events/preopen_potenup" class="btn btn-secondary" target="_blank" style="padding: 6px 18px; font-size: 0.9rem;">공식 사이트</a>
+                    </div>
+                    <p style="margin-bottom: 12px; font-size: 1rem;">실무 중심 게임 개발 부트캠프. 현업 개발자 멘토링.</p>
+                    <ul class="contribution-list" style="margin: 8px 0;">
+                        <li style="padding: 8px 0; font-size: 0.95rem;">Windows API 콘솔 게임 엔진 구현</li>
+                        <li style="padding: 8px 0; font-size: 0.95rem;">C++ 미니 STL 및 알고리즘 직접 구현</li>
+                        <li style="padding: 8px 0; font-size: 0.95rem;">Unreal Engine 내부 코드 분석</li>
+                    </ul>
+                </div>
+                
+                <!-- Study Activities -->
+                <div class="project-card" style="background: linear-gradient(135deg, rgba(99, 102, 241, 0.05), rgba(236, 72, 153, 0.05));">
+                    <h3 style="margin-bottom: 20px;">📚 Study & Continuous Learning</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+                        <div>
+                            <h4 style="font-size: 1rem; margin-bottom: 8px;">코테 알고리즘 스터디</h4>
+                            <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 10px;">2025.09 - 2026.02 (진행중)</p>
+                            <p style="font-size: 0.95rem;">매일 백준 1문제 이상 풀이 및 토론</p>
+                        </div>
+                        
+                        <div>
+                            <h4 style="font-size: 1rem; margin-bottom: 8px;">C++ 스터디</h4>
+                            <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 10px;">2024.12 - 2025.08</p>
+                            <p style="font-size: 0.95rem;">C++ 기초 플러스 독서 및 토론</p>
+                        </div>
+                        
+                        <div>
+                            <h4 style="font-size: 1rem; margin-bottom: 8px;">컴퓨터 구조 스터디</h4>
+                            <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 10px;">2023.10 - 2023.11</p>
+                            <p style="font-size: 0.95rem;">한권으로 읽는 컴퓨터 구조와 프로그래밍</p>
+                        </div>
+                        
+                        <div>
+                            <h4 style="font-size: 1rem; margin-bottom: 8px;">운영체제 스터디</h4>
+                            <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 10px;">2023.06 - 2023.09</p>
+                            <p style="font-size: 0.95rem;">운영체제(공룡책) 독서 및 토론</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: BLOG & LEARNING -->
+    <section id="blog-section" class="project-section">
+        <div class="container">
+            <h2>Blog & Continuous Learning</h2>
+            
+            <p style="margin-bottom: 40px; color: var(--text-secondary);">프로젝트를 진행하며 학습한 내용을 기록하고 공유합니다.</p>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px;">
+                <!-- Blog Card 1 -->
+                <div class="project-card" style="display: flex; flex-direction: column;">
+                    <div style="width: 100%; height: 200px; background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); border-radius: 8px; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">
+                        🌐
+                    </div>
+                    
+                    <h4 style="margin-bottom: 10px;">왜 Web Socket이 TCP Socket보다 무거울까</h4>
+                    <p style="color: var(--text-secondary); margin-bottom: 20px; flex-grow: 1;">WebSocket과 TCP Socket의 차이점과 오버헤드 발생 원인을 분석했습니다. 프로토콜 계층 구조와 성능 특성을 다룹니다.</p>
+                    
+                    <a href="https://velog.io/@flatroad/%EC%99%9C-Web-Socket%EC%9D%B4-TCP-Socket%EB%B3%B4%EB%8B%A4-%EB%AC%B4%EA%B1%B0%EC%9A%B8%EA%B9%8C" class="btn" target="_blank" style="width: 100%;">
+                        블로그 포스트 읽기 →
+                    </a>
+                </div>
+                
+                <!-- Blog Card 2 -->
+                <div class="project-card" style="display: flex; flex-direction: column;">
+                    <div style="width: 100%; height: 200px; background: linear-gradient(135deg, var(--secondary-color), var(--accent-color)); border-radius: 8px; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">
+                        🔌
+                    </div>
+                    
+                    <h4 style="margin-bottom: 10px;">Windows winsock2.h 학습</h4>
+                    <p style="color: var(--text-secondary); margin-bottom: 20px; flex-grow: 1;">Windows 소켓 프로그래밍의 핵심인 Winsock2 API를 학습하고 정리했습니다. TCP 서버 구현의 기초를 다룹니다.</p>
+                    
+                    <a href="https://velog.io/@flatroad/Windows-winsock2.h" class="btn" target="_blank" style="width: 100%;">
+                        블로그 포스트 읽기 →
+                    </a>
+                </div>
+                
+                <!-- Blog Card 3 - Notion -->
+                <div class="project-card" style="display: flex; flex-direction: column;">
+                    <div style="width: 100%; height: 200px; background: linear-gradient(135deg, #6366f1, #8b5cf6); border-radius: 8px; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">
+                        📚
+                    </div>
+                    
+                    <h4 style="margin-bottom: 10px;"> 콘솔 로케일(Notion)</h4>
+                    <p style="color: var(--text-secondary); margin-bottom: 20px; flex-grow: 1;">Windows 콘솔에서 한글이 깨지는 원인을 로케일과 코드 페이지 흐름으로 정리했습니다. printf와 wprintf의 변환 경로 차이를 예제로 설명합니다.</p>
+                    
+                    <a href="https://ragistudy.notion.site/2b954e0cc0b08004973dc5d7f5b6d899?source=copy_link" class="btn" target="_blank" style="width: 100%;">
+                        Notion 문서 보기 →
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -949,14 +1531,17 @@ int32 UCSR_P_AComp_CharicMovement::ChooseDirectionFlag(FVector2D& PadDirection_)
     <!-- SECTION: FOOTER -->
     <section id="footer-section">
         <div class="container">
-            <span class="section-label">SECTION: footer-section</span>
-            <p style="color: var(--text-muted);">© 2026 Your Name. All Rights Reserved.</p>
+            <p style="color: var(--text-muted);">© 2026 최성락. All Rights Reserved.</p>
+            <div style="margin-top: 20px;">
+                <a href="mailto:jky72ta@gmail.com" style="color: var(--text-muted); text-decoration: none; margin: 0 10px;">Email</a>
+                <a href="https://github.com/flatroad" target="_blank" style="color: var(--text-muted); text-decoration: none; margin: 0 10px;">GitHub</a>
+                <a href="https://velog.io/@flatroad" target="_blank" style="color: var(--text-muted); text-decoration: none; margin: 0 10px;">Velog</a>
+            </div>
         </div>
     </section>
 
     <!-- Initialize Highlight.js -->
     <script>
-        // Initialize syntax highlighting for all code blocks
         document.addEventListener('DOMContentLoaded', (event) => {
             document.querySelectorAll('pre code').forEach((block) => {
                 hljs.highlightElement(block);
