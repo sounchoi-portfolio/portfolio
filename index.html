@@ -547,7 +547,7 @@
     <!-- SECTION: PROJECT 1 - TubbleTubble -->
     <section id="project-1-section" class="project-section">
         <div class="container">
-            <h2>TubbleTubble</h2>
+            <h2>TumbleTumble</h2>
             
             <div id="project-1-overview" class="project-card">
                 <h3>프로젝트 개요</h3>
@@ -1046,7 +1046,7 @@ int32 UCSR_P_AComp_CharicMovement::ChooseDirectionFlag(FVector2D& PadDirection_)
                 <ul class="contribution-list">
                     <li><strong>엔진 루프 구성:</strong> Unreal Engine의 Tick 시스템과 유사하게 프레임마다 입력 처리 → 업데이트 → 렌더링 → 화면 출력 순서가 유지되도록 구현했습니다.</li>
                     <li><strong>Level-Actor 구조 설계:</strong> Unreal의 World-Actor 관계를 참고하여 Level이 Actor를 관리하고 Update/Draw를 호출하는 구조를 구현했습니다.</li>
-                    <li><strong>Actor 생명주기 관리:</strong> Unreal의 지연 삭제(Deferred Destroy) 패턴을 적용하여 순회 중 Actor 추가/삭제로 인한 크래시를 방지했습니다.</li>
+                    <li><strong>Actor 생명주기 관리:</strong> Unreal의 지연 삭제 방식을 참고, 적용하여 순회 중 Actor 추가/삭제로 인한 크래시를 방지했습니다.</li>
                     <li><strong>ScreenBuffer 렌더 시스템:</strong> 화면을 버퍼에 먼저 구성한 뒤 한 번에 출력하는 방식으로 깜빡임 없는 렌더링을 구현했습니다.</li>
                     <li><strong>Dirty Render 최적화:</strong> 변경된 셀만 표시하여 불필요한 렌더링을 제거하는 최적화를 적용했습니다.</li>
                     <li><strong>콘솔 UI 시스템:</strong> ButtonActor로 hover와 클릭 처리, 콜백 기반 상태 전이를 구현했습니다.</li>
@@ -1095,7 +1095,7 @@ int32 UCSR_P_AComp_CharicMovement::ChooseDirectionFlag(FVector2D& PadDirection_)
                     
                     <div style="margin-bottom: 30px;">
                         <h4 style="color: var(--primary-color); font-size: 1.1rem;">Solution</h4>
-                        <p>Unreal의 Deferred Destroy 패턴을 참고하여, Destroy() 호출 시 즉시 삭제하지 않고 만료 표시만 남기고, 실제 정리는 프레임 끝 한 지점(ProcessAddedAndDestroyedActor)에서만 처리하도록 규칙을 고정했습니다.</p>
+                        <p>Unreal의 지연 삭제 방식을 참고하여, Destroy() 호출 시 즉시 삭제하지 않고 만료 표시만 남기고, 실제 정리는 프레임 끝 한 지점(ProcessAddedAndDestroyedActor)에서만 처리하도록 규칙을 고정했습니다.</p>
                     </div>
                     
                     <div style="margin-bottom: 30px;">
@@ -1400,7 +1400,7 @@ void draw_pixel_st_en(t_other_draw *draw, t_detail_info *info)
                         </div>
                         <a href="https://42seoul.kr" class="btn btn-secondary" target="_blank" style="padding: 6px 18px; font-size: 0.9rem;">공식 사이트</a>
                     </div>
-                    <p style="margin-bottom: 12px; font-size: 1rem;">동료 학습 기반 소프트웨어 교육. C/C++ 시스템 프로그래밍과 협업 능력 향상.</p>
+                    <p style="margin-bottom: 12px; font-size: 1rem;">동료 학습 기반 소프트웨어 교육. C/C++ 시스템 프로그래밍과 협업 능력 향상</p>
                     <ul class="contribution-list" style="margin: 8px 0;">
                         <li style="padding: 8px 25px; font-size: 0.95rem;">C 표준 라이브러리 직접 구현 및 메모리 조작 학습</li>
                         <li style="padding: 8px 25px; font-size: 0.95rem;">멀티 스레드 동기화 (철학자 문제, 뮤텍스/세마포어)</li>
@@ -1413,11 +1413,11 @@ void draw_pixel_st_en(t_other_draw *draw, t_detail_info *info)
                     <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 12px;">
                         <div>
                             <h3 style="margin-bottom: 5px; font-size: 1.3rem;">메타버스 아카데미 3기 (Unreal)</h3>
-                            <p style="color: var(--text-muted); margin-bottom: 0; font-size: 0.95rem;">2024.07 - 2024.11</p>
+                            <p style="color: var(--text-muted); margin-bottom: 0; font-size: 0.95rem;">2024.06 - 2024.11</p>
                         </div>
                         <a href="https://mtvs.kr" class="btn btn-secondary" target="_blank" style="padding: 6px 18px; font-size: 0.9rem;">공식 사이트</a>
                     </div>
-                    <p style="margin-bottom: 12px; font-size: 1rem;">Unreal Engine 게임 개발 전문 과정. Blueprint/C++ 실전 프로젝트.</p>
+                    <p style="margin-bottom: 12px; font-size: 1rem;">Unreal Engine 게임 개발 과정. Blueprint/C++ 실전 프로젝트</p>
                     <ul class="contribution-list" style="margin: 8px 0;">
                         <li style="padding: 8px 25px; font-size: 0.95rem;">Blueprint/C++ 게임플레이 시스템 및 애니메이션 구축</li>
                         <li style="padding: 8px 25px; font-size: 0.95rem;">RPC/Replication 기반 멀티플레이 개발</li>
@@ -1434,7 +1434,7 @@ void draw_pixel_st_en(t_other_draw *draw, t_detail_info *info)
                         </div>
                         <a href="https://www.wanted.co.kr/events/preopen_potenup" class="btn btn-secondary" target="_blank" style="padding: 6px 18px; font-size: 0.9rem;">공식 사이트</a>
                     </div>
-                    <p style="margin-bottom: 12px; font-size: 1rem;">실무 중심 게임 개발 부트캠프. 현업 개발자 멘토링.</p>
+                    <p style="margin-bottom: 12px; font-size: 1rem;">Unreal Engine 심화 학습 과정</p>
                     <ul class="contribution-list" style="margin: 8px 0;">
                         <li style="padding: 8px 25px; font-size: 0.95rem;">Windows API 콘솔 게임 엔진 구현</li>
                         <li style="padding: 8px 25px; font-size: 0.95rem;">C++ 미니 STL 및 알고리즘 직접 구현</li>
@@ -1475,7 +1475,7 @@ void draw_pixel_st_en(t_other_draw *draw, t_detail_info *info)
         </div>
     </section>
 
-    <!-- SECTION: BLOG & LEARNING -->
+<!-- SECTION: BLOG & LEARNING -->
     <section id="blog-section" class="project-section">
         <div class="container">
             <h2>Blog & Continuous Learning</h2>
@@ -1511,13 +1511,41 @@ void draw_pixel_st_en(t_other_draw *draw, t_detail_info *info)
                     </a>
                 </div>
                 
-                <!-- Blog Card 3 - Notion -->
+                <!-- Blog Card 3 -->
+                <div class="project-card" style="display: flex; flex-direction: column;">
+                    <div style="width: 100%; height: 200px; background: linear-gradient(135deg, #ec4899, #f59e0b); border-radius: 8px; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">
+                        🎮
+                    </div>
+                    
+                    <h4 style="margin-bottom: 10px;">젤다의 전설 - CubeRotate</h4>
+                    <p style="color: var(--text-secondary); margin-bottom: 20px; flex-grow: 1;">Tears Of The Kingdom의 큐브 회전 메커니즘을 Unreal Engine으로 구현했습니다. 내적을 통한 규브 회전을 다룹니다.</p>
+                    
+                    <a href="https://velog.io/@flatroad/%EC%A0%A4%EB%8B%A4%EC%9D%98-%EC%A0%84%EC%84%A4Tears-Of-The-KingDom-CubeRotate" class="btn" target="_blank" style="width: 100%;">
+                        블로그 포스트 읽기 →
+                    </a>
+                </div>
+                
+                <!-- Blog Card 4 -->
+                <div class="project-card" style="display: flex; flex-direction: column;">
+                    <div style="width: 100%; height: 200px; background: linear-gradient(135deg, #10b981, #3b82f6); border-radius: 8px; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">
+                        🎯
+                    </div>
+                    
+                    <h4 style="margin-bottom: 10px;">젤다의 전설 - ModeSelect</h4>
+                    <p style="color: var(--text-secondary); margin-bottom: 20px; flex-grow: 1;">Tears Of The Kingdom의 블록골램 모드 선택 시스템을 Unreal Engine으로 구현했습니다. 모드 전환 방식에 대해 다룹니다.</p>
+                    
+                    <a href="https://velog.io/@flatroad/%EC%A0%A4%EB%8B%A4%EC%9D%98-%EC%A0%84%EC%84%A4Tears-Of-The-KingDom-ModeSelect" class="btn" target="_blank" style="width: 100%;">
+                        블로그 포스트 읽기 →
+                    </a>
+                </div>
+                
+                <!-- Blog Card 5 - Notion -->
                 <div class="project-card" style="display: flex; flex-direction: column;">
                     <div style="width: 100%; height: 200px; background: linear-gradient(135deg, #6366f1, #8b5cf6); border-radius: 8px; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">
                         📚
                     </div>
                     
-                    <h4 style="margin-bottom: 10px;"> 콘솔 로케일(Notion)</h4>
+                    <h4 style="margin-bottom: 10px;">콘솔 로케일 (Notion)</h4>
                     <p style="color: var(--text-secondary); margin-bottom: 20px; flex-grow: 1;">Windows 콘솔에서 한글이 깨지는 원인을 로케일과 코드 페이지 흐름으로 정리했습니다. printf와 wprintf의 변환 경로 차이를 예제로 설명합니다.</p>
                     
                     <a href="https://ragistudy.notion.site/2b954e0cc0b08004973dc5d7f5b6d899?source=copy_link" class="btn" target="_blank" style="width: 100%;">
@@ -1528,7 +1556,7 @@ void draw_pixel_st_en(t_other_draw *draw, t_detail_info *info)
         </div>
     </section>
 
-    <!-- SECTION: FOOTER -->
+        <!-- SECTION: FOOTER -->
     <section id="footer-section">
         <div class="container">
             <p style="color: var(--text-muted);">© 2026 최성락. All Rights Reserved.</p>
